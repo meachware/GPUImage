@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#import "GPUImageOpenGLESContext.h"
+#import "GPUImageContext.h"
 #import "GPUImageOutput.h"
 
 /** Protocol for getting Movie played callback.
@@ -25,6 +25,10 @@
  */
 @property(readwrite, nonatomic) BOOL playAtActualSpeed;
 
+/** This determines whether the video should repeat (loop) at the end and restart from the beginning. Defaults to NO.
+ */
+@property(readwrite, nonatomic) BOOL shouldRepeat;
+
 /** This is used to send the delete Movie did complete playing alert
  */
 @property (readwrite, nonatomic, assign) id <GPUImageMovieDelegate>delegate;
@@ -40,6 +44,7 @@
 - (void)readNextAudioSampleFromOutput:(AVAssetReaderTrackOutput *)readerAudioTrackOutput;
 - (void)startProcessing;
 - (void)endProcessing;
+- (void)cancelProcessing;
 - (void)processMovieFrame:(CMSampleBufferRef)movieSampleBuffer; 
 
 @end
