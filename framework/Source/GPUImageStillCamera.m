@@ -7,7 +7,7 @@
 // the CVPixelBufferPixelFormatTypeKey from being set, as well as lets capturePhotoAsSampleBufferWithCompletionHandler:
 // do its work. However, if you do this you cannot use any of the photo capture methods to take a photo if you also
 // supply filter.
-#define CAPTURE_COMPLETION_HANDLER 0
+#define CAPTURE_COMPLETION_HANDLER 1
 
 void stillImageDataReleaseCallback(void *releaseRefCon, const void *baseAddress)
 {
